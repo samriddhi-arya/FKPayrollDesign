@@ -24,7 +24,7 @@ public class Controller {
 			System.out.println("Exiting the system.");
 			return;
 		case 1: 
-			System.out.println("Adding a new Employee. Please Enter the details below: ");
+			System.out.println("Adding a new Employee. Please Enter the Details below: ");
 			String ID = EmployeeController.add();
 			System.out.println("New Employee Added with employee ID " + ID + " Please save for future reference.");
 			break;
@@ -32,6 +32,11 @@ public class Controller {
 			System.out.println("Deleting an Employee. Please Enter the Details below: ");
 			EmployeeController.delete();
 			System.out.println("Deleted the Employee.");
+			break;
+		case 3: 
+			System.out.println("Time card fo an Employee. Please Enter the Details below: ");
+			EmployeeController.postTimeCard();
+			break;
 		default:
 			System.out.println("Enter a valid Option.");
 			break;

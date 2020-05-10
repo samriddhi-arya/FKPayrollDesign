@@ -1,5 +1,6 @@
 package user;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class EmployeeController {
@@ -38,5 +39,16 @@ public class EmployeeController {
 		String ID = input.nextLine();
 		//get from json file with given ID and remove.
 		
+	}
+	
+	public static void postTimeCard() {
+		System.out.print("Enter Employee ID: ");
+		String ID = input.nextLine();
+		System.out.println("Enter number of hours worked: ");
+		int hours = input.nextInt();
+		LocalDate date = LocalDate.now();
+		//get the time card for employee from json records.
+		TimeCard card = new TimeCard(date,hours);
+		card.displayTimeCard(ID);
 	}
 }
