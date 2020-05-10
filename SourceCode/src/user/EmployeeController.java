@@ -41,14 +41,29 @@ public class EmployeeController {
 		
 	}
 	
+	//For hourly worker
 	public static void postTimeCard() {
 		System.out.print("Enter Employee ID: ");
 		String ID = input.nextLine();
-		System.out.println("Enter number of hours worked: ");
+		System.out.print("Enter number of hours worked: ");
 		int hours = input.nextInt();
 		LocalDate date = LocalDate.now();
 		//get the time card for employee from json records.
 		TimeCard card = new TimeCard(date,hours);
 		card.displayTimeCard(ID);
+	}
+	
+	//for salary worker
+	public static void postSalesCard() {
+		System.out.print("Enter Employee ID: ");
+		String ID = input.nextLine();
+		System.out.print("Enter number of sales: ");
+		int sales = input.nextInt();
+		System.out.println("Enter cost per sale: ");
+		double costPer = input.nextDouble();
+		LocalDate date = LocalDate.now();
+		//get the time card for employee from json records.
+		SalesCard card = new SalesCard(date,costPer,sales);
+		card.displaySalesCard(ID);
 	}
 }

@@ -34,8 +34,12 @@ public class Controller {
 			System.out.println("Deleted the Employee.");
 			break;
 		case 3: 
-			System.out.println("Time card fo an Employee. Please Enter the Details below: ");
+			System.out.println("Time card for an Employee. Please Enter the Details below: ");
 			EmployeeController.postTimeCard();
+			break;
+		case 4: 
+			System.out.println("Sales card for an Employee. Please Enter the Details below: ");
+			EmployeeController.postSalesCard();
 			break;
 		default:
 			System.out.println("Enter a valid Option.");
