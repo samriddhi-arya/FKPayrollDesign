@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 public class EmployeeController {
 
-	public static void add() {
-		Scanner input = new Scanner(System.in);
+	static Scanner input = new Scanner(System.in);
+	
+	public static String add() {
+		
 		System.out.print("Enter Employee Type(salary or hourly): ");
 		String type = input.nextLine();
 		System.out.print("Enter Employee Name: ");
@@ -21,16 +23,20 @@ public class EmployeeController {
 			System.out.print("Enter Commission Rate: ");
 			double commission = input.nextDouble();
 			SalariedEmployee emp= new SalariedEmployee();
-			emp.addEmployee(name,contact,isUnion,salary,commission);
+			return emp.addEmployee(name,contact,isUnion,salary,commission);
 		}
 		else {
 			System.out.print("Enter Hourly wages: ");
 			double hourlyWage = input.nextDouble();
 			HourlyEmployee emp = new HourlyEmployee();
-			emp.addEmployee(name,contact,isUnion,hourlyWage);
+			return emp.addEmployee(name,contact,isUnion,hourlyWage);
 		}
-		
-		input.close();
+	}
+	
+	public static void delete() {
+		System.out.print("Enter Employee ID:");
+		String ID = input.nextLine();
+		//get from json file with given ID and remove.
 		
 	}
 }

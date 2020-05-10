@@ -13,9 +13,11 @@ public class SalariedEmployee extends Employee {
 	
 	public double getCommisionRate() { return commisionRate; }
 	
-	public void addEmployee(String name,String contactNo,boolean isUnion,double monthlySalary,double commisionRate) {
+	public String addEmployee(String name,String contactNo,boolean isUnion,double monthlySalary,double commisionRate) {
 		super.addEmployee(name, contactNo, isUnion);
 		this.monthlySalary = monthlySalary;
 		this.commisionRate = commisionRate;
+		
+		return getID();
 	}
 }

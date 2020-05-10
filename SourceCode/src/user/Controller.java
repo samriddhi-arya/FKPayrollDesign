@@ -25,9 +25,13 @@ public class Controller {
 			return;
 		case 1: 
 			System.out.println("Adding a new Employee. Please Enter the details below: ");
-			EmployeeController.add();
-			System.out.println("New Employee Added.");
+			String ID = EmployeeController.add();
+			System.out.println("New Employee Added with employee ID " + ID + " Please save for future reference.");
 			break;
+		case 2: 
+			System.out.println("Deleting an Employee. Please Enter the Details below: ");
+			EmployeeController.delete();
+			System.out.println("Deleted the Employee.");
 		default:
 			System.out.println("Enter a valid Option.");
 			break;
