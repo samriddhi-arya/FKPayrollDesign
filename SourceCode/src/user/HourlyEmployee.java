@@ -7,9 +7,11 @@ public class HourlyEmployee extends Employee{
 	
 	public double getHourlyRate() { return hourlyRate; }
 	
-	public void addEmployee(String name, String contactNo, boolean isUnion,double hourlyRate) {
+	public String addEmployee(String name, String contactNo, boolean isUnion,double hourlyRate) {
 		super.addEmployee(name, contactNo, isUnion);
 		this.hourlyRate = hourlyRate;
+		
+		return getID();
 	}
 	
 }
