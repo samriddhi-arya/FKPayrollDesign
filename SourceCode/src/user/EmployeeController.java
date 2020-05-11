@@ -24,13 +24,17 @@ public class EmployeeController {
 			System.out.print("Enter Commission Rate: ");
 			double commission = input.nextDouble();
 			SalariedEmployee emp= new SalariedEmployee();
-			return emp.addEmployee(name,contact,isUnion,salary,commission);
+			String id = emp.addEmployee(name,contact,isUnion,salary,commission);
+			JSONController.add(emp);
+			return id;
 		}
 		else {
 			System.out.print("Enter Hourly wages: ");
 			double hourlyWage = input.nextDouble();
 			HourlyEmployee emp = new HourlyEmployee();
-			return emp.addEmployee(name,contact,isUnion,hourlyWage);
+			String id = emp.addEmployee(name,contact,isUnion,hourlyWage);
+			JSONController.add(emp);
+			return id;
 		}
 	}
 	
@@ -48,8 +52,8 @@ public class EmployeeController {
 		System.out.print("Enter number of hours worked: ");
 		int hours = input.nextInt();
 		LocalDate date = LocalDate.now();
-		//get the time card for employee from json records.
 		TimeCard card = new TimeCard(date,hours);
+		JSONController.addTimeCard(card);
 		card.displayTimeCard(ID);
 	}
 	
